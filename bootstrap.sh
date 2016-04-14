@@ -33,6 +33,9 @@ sudo /usr/share/elasticsearch/bin/plugin install marvel-agent
 # install HQ
 sudo /usr/share/elasticsearch/bin/plugin install royrusso/elasticsearch-HQ
 
+# install Phonetic Analysis
+sudo /usr/share/elasticsearch/bin/plugin install analysis-phonetic
+
 # start the services
 sudo service kibana start
 sudo service elasticsearch start
