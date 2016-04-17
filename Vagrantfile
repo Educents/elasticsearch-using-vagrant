@@ -9,14 +9,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
 
-    config.vm.define "es1" do |es1|
-        es1.vm.hostname = "elastic1"
-        es1.vm.box = "ubuntu/trusty64"
-        es1.vm.network :forwarded_port, guest: 9200, host: 9200
-        es1.vm.network :forwarded_port, guest: 5601, host: 5601
-        es1.vm.provision :shell, :path => "bootstrap.sh"
-        es1.vm.provider :virtualbox do |v|
-            v.name = "es1"
+    config.vm.define "ubuntu", autostart: false do |ubuntu|
+        ubuntu.vm.hostname = "elastic2"
+        ubuntu.vm.box = "ubuntu/trusty64"
+        ubuntu.vm.network :forwarded_port, guest: 9200, host: 9200
+        ubuntu.vm.network :forwarded_port, guest: 5601, host: 5601
+        ubuntu.vm.provision :shell, :path => "ubuntubootstrap.sh"
+        ubuntu.vm.provider :virtualbox do |v|
+            v.name = "ubuntu_elasticsearch"
+        end
+    end
+
+    config.vm.define "centos", autostart: false do |centos|
+        centos.vm.hostname = "elastic2"
+        centos.vm.box = "centos/7"
+        centos.vm.network :forwarded_port, guest: 9200, host: 9200
+        centos.vm.network :forwarded_port, guest: 5601, host: 5601
+        centos.vm.provision :shell, :path => "centosbootstrap.sh"
+        centos.vm.provider :virtualbox do |v|
+            v.name = "centos_elasticsearch"
         end
     end
 end

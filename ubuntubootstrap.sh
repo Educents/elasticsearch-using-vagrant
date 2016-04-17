@@ -9,6 +9,8 @@ sudo apt-get install openjdk-7-jre-headless -y
 # install elasticsearch
 wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
 sudo dpkg -i elasticsearch-2.3.1.deb
+
+# start elasticsearch on boot
 sudo update-rc.d elasticsearch defaults 95 10
 
 # allow host OS to access through port forwarding
@@ -29,6 +31,9 @@ sudo /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head
 # install marvel
 sudo /usr/share/elasticsearch/bin/plugin install license
 sudo /usr/share/elasticsearch/bin/plugin install marvel-agent
+
+# install watcher
+sudo /usr/share/elasticsearch/bin/plugin install watcher
 
 # install HQ
 sudo /usr/share/elasticsearch/bin/plugin install royrusso/elasticsearch-HQ
