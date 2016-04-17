@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     config.vm.define "ubuntu", autostart: false do |ubuntu|
-        ubuntu.vm.hostname = "elastic2"
+        ubuntu.vm.hostname = "elastic1"
         ubuntu.vm.box = "ubuntu/trusty64"
         ubuntu.vm.network :forwarded_port, guest: 9200, host: 9200
         ubuntu.vm.network :forwarded_port, guest: 5601, host: 5601
