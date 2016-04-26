@@ -31,10 +31,10 @@ sudo yum -y install elasticsearch
 #    sudo /bin/systemctl enable elasticsearch.service
 #fi
 
-
 # allow host OS to access through port forwarding
-sudo echo "network.bind_host: 0" >> /etc/elasticsearch/elasticsearch.yml
-sudo echo "network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml
+sudo echo "
+network.bind_host: 0
+network.host: 0.0.0.0" >> /etc/elasticsearch/elasticsearch.yml
 sudo sed -i -e '$a\' /etc/elasticsearch/elasticsearch.yml
 sudo sed -i -e '$a\' /etc/elasticsearch/elasticsearch.yml
 
@@ -56,45 +56,3 @@ sudo yum -y install kibana
 #    sudo /bin/systemctl daemon-reload
 #    sudo /bin/systemctl enable kibana.service
 #fi
-
-# install head
-sudo /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head
-
-# install marvel
-sudo /usr/share/elasticsearch/bin/plugin install license
-sudo /usr/share/elasticsearch/bin/plugin install marvel-agent
-
-# install watcher
-sudo /usr/share/elasticsearch/bin/plugin install watcher
-
-# install HQ
-sudo /usr/share/elasticsearch/bin/plugin install royrusso/elasticsearch-HQ
-
-# install Phonetic Analysis
-sudo /usr/share/elasticsearch/bin/plugin install analysis-phonetic
-
-# start the services
-sudo service kibana start
-sudo service elasticsearch start
-
-# connect marvel to kibana
-sudo /opt/kibana/bin/kibana plugin --install elasticsearch/marvel/latest
-
-# connect sense to kibana
-sudo /opt/kibana/bin/kibana plugin --install elastic/sense
-
-# restart all the services so we can use everything on first run!
-sudo service kibana restart
-sudo service elasticsearch restart
-
-
-
-
-
-
-
-
-
-
-
-
