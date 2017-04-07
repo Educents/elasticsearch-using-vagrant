@@ -7,8 +7,8 @@ sudo apt-get update
 sudo apt-get install openjdk-7-jre-headless -y
 
 # install elasticsearch
-wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
-sudo dpkg -i elasticsearch-2.3.1.deb
+wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.0/elasticsearch-2.4.0.deb
+sudo dpkg -i elasticsearch-2.4.0.deb
 
 # start elasticsearch on boot
 sudo update-rc.d elasticsearch defaults 95 10
