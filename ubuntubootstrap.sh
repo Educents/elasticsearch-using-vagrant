@@ -22,6 +22,6 @@ sudo sed -i -e '$a\' /etc/elasticsearch/elasticsearch.yml
 
 # install Kibana
 wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-echo "deb http://packages.elastic.co/kibana/4.5/debian stable main" | sudo tee -a /etc/apt/sources.list
+echo "deb http://packages.elastic.co/kibana/4.6/debian stable main" | sudo tee -a /etc/apt/sources.list
 sudo apt-get update && sudo apt-get install kibana
 sudo update-rc.d kibana defaults 95 10
