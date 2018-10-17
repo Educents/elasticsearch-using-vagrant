@@ -4,7 +4,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.ssh.forward_agent = true
 
     config.vm.provider :virtualbox do |v|
-        v.customize ["modifyvm", :id, "--memory", 1536]
+        v.customize ["modifyvm", :id, "--memory", 4096]
         v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
