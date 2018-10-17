@@ -15,7 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ubuntu.vm.network :forwarded_port, guest: 9200, host: 9200
         ubuntu.vm.network :forwarded_port, guest: 5601, host: 5601
         ubuntu.vm.provision :shell, :path => "ubuntubootstrap.sh"
-        ubuntu.vm.provision :shell, :path => "plugins.sh"
         ubuntu.vm.provider :virtualbox do |v|
             v.name = "ubuntu_elasticsearch"
         end
