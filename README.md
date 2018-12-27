@@ -9,14 +9,7 @@ An easy to install vagrant setup using Elasticsearch 2.3.1 and some very useful 
 
 ```
 $ git clone https://github.com/Educents/elasticsearch-using-vagrant ./vm-elastic
-$ cd vm-elastic && vagrant up ubuntu
-```
-
-### CentOS VM
-
-```
-$ git clone https://github.com/Educents/elasticsearch-using-vagrant ./vm-elastic
-$ cd vm-elastic && vagrant up centos
+$ cd vm-elastic && vagrant up
 ```
 
 ## Usage
@@ -25,7 +18,3 @@ After installing the ElasticSearch server, you'll be able to head over to [http:
 A few plugins have been installed for you:
 
 * Kibana ([http://localhost:5601/](http://localhost:5601/))
-* Head ([http://localhost:9200/_plugin/head](http://localhost:9200/_plugin/head/))
-* HQ ([http://localhost:9200/_plugin/hq](http://localhost:9200/_plugin/hq/))
-* Marvel ([http://localhost:5601/app/marvel](http://localhost:5601/app/marvel))
-* Sense ([http://localhost:5601/app/sense](http://localhost:5601/app/sense))
